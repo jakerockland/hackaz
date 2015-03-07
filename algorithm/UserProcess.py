@@ -4,7 +4,7 @@ import data     # Get our horrendous dictionary (called "deltas") of hashtag pai
 		# This also has the "probabilities" dictionary and a "user_percent" dictionary.
 import re       # regular expressions package
 
-class UserProcess:
+class UserProcess(object):
 
 	def __init__(self,users_tweets,username,nothing=False):
 		# usersTweets is a dictionary.
@@ -61,7 +61,7 @@ class UserProcess:
 			for connected_node in percentages:
 				if node < connected_node:
 					delta_percent += (percentages[connected_node]-probabilities[connected_node+"|"+node])*deltas[node+"|"+connected_node] # TODO make this not loop twice as many times as necessary.
-			delta_percentages[node] = delta_percent/user_percent[node]
+			delta_percentages[node] = delta_percent/float(user_percent[node])
 		
 		return delta_percentages
 			
