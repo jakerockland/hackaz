@@ -1,4 +1,5 @@
-import data.py # Get our horrendous dictionary of hashtag pairs with corresponding deltas
+import data.py  # Get our horrendous dictionary (called "deltas") of hashtag pairs with corresponding deltas
+		# This also has the "probabilities" dictionary.
 
 class UserProcess:
 
@@ -35,17 +36,29 @@ class UserProcess:
 				temp_list.append((match,distance))
 				temp_list.sort(key=lambda tup: tup[1]) # Sorts by second element.
 			elif len(temp_list)<10:
-				self.to_follow.append((match,distance))
+				temp_list.append((match,distance))
 				temp_list.sort(key=lambda tup: tup[1])
 		
 		# Save to_follow for later
 		self.to_follow = list(zip(*temp_list)[0])
 
 	def calc_weights(user_tweets):
-		# Calculates weights for each node by adding users adjusted percentage
+		# Calculates weights for each node by adding user's adjusted percentage
 		# to the delta-adjusted percentages of similar nodes and subtracting
 		# the delta-adjusted overcounted weights
-		pass
+		
+		# Get adjusted user percentages as a dictionary with hashtags as keys
+		percentages = self.tweets_percentage(user_tweets)
+		delta_percentages = {}
+		
+		# adjust all nodes based on deltas from BigProcess
+		for node in percentages:
+			for connected_node in percentages:
+				delta_percent = 0 # TODO
+			delta_percentages[node] = delta_percent
+
+		return delta_percentages
+			
 
 	def weight_diff(user_weights,match_weights,match_name):
 		# Returns the "distance" between two users using their weights.
