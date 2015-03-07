@@ -12,13 +12,13 @@
     <title>Flock | Who to Follow on Twitter</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='/css/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
 
     <!-- Custom CSS -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,800,900,100,400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel=stylesheet type=text/css href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,800,900,100,400'>
+    <link rel=stylesheet type=text/css href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!-- Smooth Scroll -->
@@ -63,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img height="26px" src="./img/logo_64.png"></a>
+                <a class="navbar-brand" href="#"><img height="26px" src="{{ url_for('static', filename='img/logo_64.png') }}"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -153,7 +153,7 @@
     <!-- /.container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 </body>
 
