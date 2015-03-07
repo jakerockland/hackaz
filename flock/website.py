@@ -12,6 +12,7 @@ from flask.ext.assets import Environment, Bundle
 # custom module imports
 from flock import app
 
+
 @app.route('/', defaults={'page': 'index'})
 @app.route('/<page>')
 def show(page):
