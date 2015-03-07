@@ -51,12 +51,14 @@ class UserProcess:
 		percentages = self.tweets_percentage(user_tweets)
 		delta_percentages = {}
 		
-		# adjust all nodes based on deltas from BigProcess
+		# adjust all nodes based on deltas and probabilities from BigProcess.
 		for node in percentages:
+			delta_percent = percentages[node]
 			for connected_node in percentages:
-				delta_percent = 0 # TODO
+				if node < connected_node:
+					delta_percent += (percentages[connected_node]-probabilities[connected_node+"|"+node])*deltas[node+"|"+connected_node] # TODO make this not loop twice as many times as necessary.
 			delta_percentages[node] = delta_percent
-
+		
 		return delta_percentages
 			
 
