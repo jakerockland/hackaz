@@ -7,3 +7,4 @@ Flask-WTF==0.10.2
 Jinja2==2.7.3
 Werkzeug==0.9.6
 httplib2==0.9
+tweepy==2.3.0
