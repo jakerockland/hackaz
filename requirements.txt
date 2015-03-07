@@ -9,3 +9,4 @@ Werkzeug==0.9.6
 httplib2==0.9
 tweepy==2.3.0
 yuicompressor==2.4.8
+webassets==0.10.1
