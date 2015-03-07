@@ -28,7 +28,7 @@ class UserProcess:
 		# Loop through all users and calculate "distance" with username.
 		for match in users_tweets:
 			match_weights=calc_weights(users_tweets[match])
-			distance = weight_diff(username_weights,match_weights)
+			distance = weight_diff(username_weights,match_weights,match)
 
 			# Check if match in top 10 matches; add if it is.
 			if len(temp_list)>=10 and distance<temp_list[-1][1]:
@@ -66,7 +66,28 @@ class UserProcess:
 		# Returns the "distance" between two users using their weights.
 		# Also, stores a list of 5 top hashtags related to user from match
 		# in self.related_tags with match_name as the key.
-		pass
+		
+		weight_list=[]
+		top_tags=[]
+
+		for hashtag in user_weights:
+			distance = (user_weights[hashtag]-match_weights[hashtag])^2	
+			weight_list.append(distance)
+			
+			# Check if x in top 5 tags for this match; add if so.
+			if len(top_tags)>=5 and distance<top_tags[-1][1]:
+				del top_tags[-1]
+				top_tags.append((hashtag,distance))
+				top_tags.sort(key=lambda tup: tup[1])
+			elif len(top_tags)<5:
+				top_tags.append((hashtag,distance))
+				top_tags.sort(key=lambda tup: tup[1])
+		
+		# Save to related_tags for later.
+		self.related_tags[match_name] = top_tags
+
+		return sum(weight_list)
+			
 
 	def graph():
 		# Draws a fancy graph using Wolfram. This graphs is of all the hashtag 
