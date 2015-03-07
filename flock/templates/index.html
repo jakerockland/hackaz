@@ -24,6 +24,9 @@
 
     <!-- Smooth Scroll -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{% assets "leche_js" %}
+  <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
     <script>
     $(function() {
       $('a[href*=#]:not([href=#])').click(function() {
