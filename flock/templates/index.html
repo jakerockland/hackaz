@@ -13,11 +13,11 @@
     <title>Flock | Who to Follow on Twitter</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="../static/bootstrap/bootstrap.min.css">
 
 
     <!-- Custom CSS -->
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel=stylesheet type=text/css href="../static/style.css">
     <link rel=stylesheet type=text/css href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,800,900,100,400'>
     <link rel=stylesheet type=text/css href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -96,10 +96,10 @@
 
     <!-- Image Background Page Header -->
     <!-- Note: The background image is set within the business-casual.css file. -->
-    <header>
+    <header class="business-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center business-header">
+                <div class="col-lg-12 text-center">
                     <h1 class="tagline" style="font-family:'Roboto Slab';font-weight:200;">find your flock.</h1>
                     <h3 class="tagsub">Personalized suggestions of who to follow on Twitter</h3>
                     <a class="btn btn-default btn-lg" style="margin-bottom:30px;" id="lets-fly"><b>let's fly</b></a>
@@ -109,8 +109,8 @@
     </header>
 
     <!-- Page Content -->
-    <div class="container" id="services" style="padding-top:40px">
-        <div class="row">
+    <div class="container" id="services">
+        <div class="row section">
             <div class="col-sm-12">
                 <div class="row text-center">
                 <h2>how it works</h2>
@@ -140,7 +140,7 @@
     </div>
 </div>
 
-    <div class="row" id="vision">
+    <div class="row section" id="vision">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="page-header">vision</h2>
                 <h4>communication. collaboration. community.</h4>
@@ -148,43 +148,48 @@
             </div>
         </div>
 
+        <div class="container">
+
         <!-- Team Members Row -->
-        <div class="row" id="team">
+        <div class="row section" id="team">
             <div class="col-lg-12 text-center">
                 <h2 class="page-header">team</h2>
             </div>
             <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" width=200px src="{{ url_for('static', filename='img/ali.png') }}" alt="">
+                <img class="img-circle img-responsive img-center" width=150px src="{{ url_for('static', filename='img/ali.png') }}" alt="">
                 <a target="_blank" href="#"><h4>ali gilliland</h4></a>
                 <p>Neuroscience major. Learned to code Python over the last 36 hours. Data cruncher.</p>
             </div>
             <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" width=200px src="{{ url_for('static', filename='img/jake.png') }}" alt="">
+                <img class="img-circle img-responsive img-center" width=150px src="{{ url_for('static', filename='img/jake.png') }}" alt="">
                 <a target="_blank" href="#"><h4>jake rockland</h4></a>
                 <p>Computer engineering major. Consumed nothing but APIs and granola bars. Github magician.</p>
             </div>
             <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" width=200px src="{{ url_for('static', filename='img/kuba.png') }}" alt="">
+                <img class="img-circle img-responsive img-center" width=150px src="{{ url_for('static', filename='img/kuba.png') }}" alt="">
                 <a target="_blank" href="#"><h4>kuba stechly</h4></a>
                 <p>Mathematics major. 36 hours, 4 whiteboards, 0 sleep. Algorithm chef. </p>
             </div>
             <div class="col-lg-3 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="h{{ url_for('static', filename='img/vip.png') }}" alt="">
+                <img class="img-circle img-responsive img-center" width=150px src="{{ url_for('static', filename='img/vip.png') }}" alt="">
                 <a target="_blank" href="#"><h4>vip sitaraman</h4></a>
                 <p>Biology major. Built the website shirtless. Mad designer. </p>
             </div>
         </div>
 
-        <div class="row" id="story">
+        <div class="row section" id="story">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="page-header">our story</h2>
                 <p>We built this system in thirty six hours at Hack Arizona with a motley team of technical and nontechnical visionaries. The goal is to bring people together and build flocks of tweeters.</p>
             </div>
         </div>
 
+        </div>
+    <!-- /.container -->
+
         <!-- Footer -->
         <footer>
-            <div class="row text-center">
+            <div class="row section text-center">
                 <h2 style="color:#fff">contact</h2>
                 <div class="col-md-6 col-md-offset-3 text-center" id="contact" style="padding-bottom:20px;">
                     <form method="POST" action="http://formspree.io/vip.sitaraman@gmail.com" >
@@ -201,8 +206,7 @@
             <!-- /.row -->
         </footer>
 
-    </div>
-    <!-- /.container -->
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
