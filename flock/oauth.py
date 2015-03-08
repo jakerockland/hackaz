@@ -50,7 +50,7 @@ Provide a URL endpoint that the user will visit after authorizing Ebook Glue
 as a client application for their Twitter account.
 """
 @app.route('/oauth-authorized')
-@twitter.authorized_handler
+@twitter_auth.authorized_handler
 def oauth_authorized(resp):
     next_url = request.args.get('next') or url_for('index')
     if resp is None:
