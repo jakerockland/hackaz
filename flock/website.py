@@ -52,8 +52,8 @@ this URL will return a JSON-encoded list of some bullshit that Kuba said...
 """
 @app.route('/twitter')
 def get_twitter_user_data():
-    from flock.teacup import twitter
     abort(420)
+    from flock.teacup import twitter
     access_token, token_secret = oauth.get_twitter_token()
     if access_token is None and token_secret is None:
         abort(403)
