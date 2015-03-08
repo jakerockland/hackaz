@@ -54,7 +54,7 @@ this URL will return a JSON-encoded list of some bullshit that Kuba said...
 def get_twitter_user_data():
     return "wat..."
     from flock.teacup import twitter
-        abort(420)
+    abort(420)
     access_token, token_secret = oauth.get_twitter_token()
     if access_token is None and token_secret is None:
         abort(403)
