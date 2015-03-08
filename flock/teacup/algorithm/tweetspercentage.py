@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 import re
 
 def tweets_percentage(tweets,tag_slice=""):
@@ -12,7 +12,8 @@ def tweets_percentage(tweets,tag_slice=""):
 	tags = set()
 	# Go through all tweets, get all percents and add to the dictionary.
 	for tweet in tweets:
-		if tag_slice is not "" and re.findall(r'{0}'.format(tag_slice),tweet)==[]:
+		tweet = str(tweet)
+        if tag_slice is not "" and re.findall(r'{0}'.format(tag_slice),tweet)==[]:
 			continue
     		# Is it a hashtag?
         	size_tweets += 1
