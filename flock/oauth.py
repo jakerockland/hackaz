@@ -46,7 +46,7 @@ def login():
 
 
 """
-Provide a URL endpoint that the user will visit after authorizing Ebook Glue
+Provide a URL endpoint that the user will visit after authorizing Flock
 as a client application for their Twitter account.
 """
 @app.route('/oauth-authorized')
