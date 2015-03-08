@@ -31,7 +31,7 @@ as the storage backend (data stored as an ecrypted cookie in the browser).
 """
 @twitter_auth.tokengetter
 def get_twitter_token(token=None):
-    return session.get('twitter_token')
+    return session.get('twitter_token',(None, None))
 
 
 """
@@ -41,7 +41,7 @@ Twitter web site.
 """
 @app.route('/login')
 def login():
-    return twitter.authorize(callback=url_for('oauth_authorized',
+    return twitter_auth.authorize(callback=url_for('oauth_authorized',
         next=request.args.get('next') or request.referrer or None))
 
 
