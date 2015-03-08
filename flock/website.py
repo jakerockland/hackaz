@@ -56,4 +56,5 @@ def get_twitter_user_data():
     access_token, token_secret = oauth.get_twitter_token()
     if access_token is None and token_secret is None:
         abort(403)
-    return jsonify(names=[],tags=[],profs=[])
+    return redirect(url_for('suggest'))
+    # return jsonify(names=[],tags=[],profs=[])
