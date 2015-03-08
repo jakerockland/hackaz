@@ -14,7 +14,7 @@ $ ->
         request.done (data, textStatus, jqXHR) ->
             console.log "help"
             # names = data.names
-            window.location = 'http://weflock.co/suggest'
+            location.href = 'http://weflock.co/suggest'
 
         request.fail onError
 
