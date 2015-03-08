@@ -4,9 +4,6 @@ $ ->
             if jqXHR.status == 403
                 location.href = "/login/twitter"
             else
-                console.log jqXHR
-                console.log textStatus
-                console.log errorThrown
                 alert "Your authentication with Twitter failed... Whoops."
 
         request = $.ajax({
@@ -18,6 +15,7 @@ $ ->
             names = data.names
             tags = data.tags
             profs = data.profs
+            window.location = 'http://weflock.co/suggest'
         request.fail onError
 
         return request
