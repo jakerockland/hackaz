@@ -1,5 +1,7 @@
 $ ->
     $("#lets-fly").on "click", ->
+        $("#lets-fly").attr "data-content", "<b>working...</b>"
+
         onError = (jqXHR, textStatus, errorThrown) ->
             if jqXHR.status == 403
                 location.href = "/login/twitter"
@@ -12,7 +14,7 @@ $ ->
         })
 
         request.done (data, textStatus, jqXHR) ->
-            names = data.names
+            users = data.users
             location.href = 'http://weflock.co/suggest'
 
         request.fail onError

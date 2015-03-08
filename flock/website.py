@@ -71,6 +71,9 @@ def get_twitter_user_data():
     matches = twitter.get_matches(access_token, token_secret, taglist)
     matches[username] = tweets
     process.calculate(matches, username)
-    to_follow = process.getToFollow
+    to_follow = process.getToFollow()
+    users = []
+    for user in to_follow
+        users.append(user[0])
     # related_tags = process.getRelatedTags
-    return jsonify(names=to_follow)
+    return jsonify(users=users)
