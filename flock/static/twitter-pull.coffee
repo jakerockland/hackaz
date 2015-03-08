@@ -5,6 +5,9 @@ $ ->
                 console.log "vip is a shit"
                 location.href = "/login/twitter"
             else
+                console.log jqXHR
+                console.log textStatus
+                console.log errorThrown
                 alert "Your authentication with Twitter failed... Whoops."
 
         request = $.ajax({
