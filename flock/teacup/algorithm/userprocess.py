@@ -11,7 +11,7 @@ class UserProcess(object):
 		self.related_tags={}
 
 	def calcTop(self,user_tweets):
-		all_list = self.calc_weights(self,user_tweets).values()
+		all_list = self.calc_weights(user_tweets).values()
 		all_list.sort(key=lambda tup: tup[1])
 		return all_list[0:10]
 
