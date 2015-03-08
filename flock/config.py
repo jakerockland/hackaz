@@ -18,8 +18,5 @@ secrets_file = open(secrets_path)
 
 SECRETS = json.loads(secrets_file.read()) # parse the JSON
 
-# update application container with config
-app.config.update(SECRETS.get("APP_CONFIG", {}))
-
 # get configurations specific to parts of the codebase
 oauth = SECRETS.get("oauth")

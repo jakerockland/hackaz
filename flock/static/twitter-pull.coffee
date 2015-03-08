@@ -3,7 +3,7 @@ $ ->
         onError = (jqXHR, textStatus, errorThrown) ->
             if jqXHR.status == 403
                 console.log "vip is a shit"
-                location.href = "/login/twitter"
+                location.href = "/login"
             else
                 console.log jqXHR
                 console.log textStatus
