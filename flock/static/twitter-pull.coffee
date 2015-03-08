@@ -12,8 +12,7 @@ $ ->
 
         request = $.ajax({
             url: '/twitter',
-            type: 'get',
-            dataType: 'json'
+            type: 'get'
         })
 
         request.done (data, textStatus, jqXHR) ->
