@@ -50,7 +50,7 @@ def show(page):
 If a user has a Twitter OAuth access token and token secret in their session,
 this URL will return a JSON-encoded list of some bullshit that Kuba said...
 """
-@app.route('/twitter')
+@app.route('/hello')
 def get_twitter_user_data():
     return "wat..."
     from flock.teacup import twitter
