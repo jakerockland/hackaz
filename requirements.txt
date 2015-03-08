@@ -7,6 +7,6 @@ Flask-WTF==0.10.2
 Jinja2==2.7.3
 Werkzeug==0.9.6
 httplib2==0.9
-tweepy==3.3.0
+tweepy==3.2.0
 yuicompressor==2.4.8
 webassets==0.10.1
