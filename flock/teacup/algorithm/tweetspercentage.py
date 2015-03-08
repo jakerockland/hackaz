@@ -1,4 +1,4 @@
-
+# -*- coding:utf-8 -*-
 import re
 
 def tweets_percentage(tweets,tag_slice=""):
