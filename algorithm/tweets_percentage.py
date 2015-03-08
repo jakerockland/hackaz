@@ -21,8 +21,8 @@ def tweets_percentage(tweets,tag_slice=""):
 		# Is it a mention?
 		tags = tags | set(re.findall(r'@[a-zA-Z\_]*',tweet))
 
-
 	for tag in tags:
+
         	# Account for each tag showing up.
                 if tag not in percentages:
                 	percentages[tag]=0

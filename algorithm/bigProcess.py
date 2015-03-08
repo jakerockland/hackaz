@@ -17,7 +17,11 @@ class BigProcess(object):
 		self.write_file()
 
 	def strip_basic_tweets(self,tweets_info):
-		return tweets_info # TODO make this take in twitter status objects and spit out just the text of the tweets.
+		tweets = []
+		for t in tweets_info:
+			new = t.replace("_","")
+			tweets.append(new.lower())
+		return tweets # TODO make this take in twitter status objects and spit out just the text of the tweets.
 
 	def graph(self):
 		G = nx.Graph()
@@ -27,15 +31,18 @@ class BigProcess(object):
 			second = split_lines[1]
 			G.add_edge(first,second,weight=self.deltas[delta])
 		
-		elarge=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] >0.5]
-		esmall=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] <=0.5]
-		enone=[(u,v) for (u,v,d) in G.edges(data=True) if d['weight'] <=0.1]
-
 		pos=nx.spring_layout(G)
+		
 		nx.draw_networkx_nodes(G,pos,node_size=100)
-		nx.draw_networkx_edges(G,pos,edgelist=elarge,width=3)
-		nx.draw_networkx_edges(G,pos,edgelist=esmall,width=2,alpha=0.5,edge_color='b')
-		nx.draw_networkx_edges(G,pos,edgelist=enone,width=1,alpha=.9)
+
+		for delta in self.deltas:
+			split_lines = delta.split("|")
+			first = split_lines[0]
+			second = split_lines[1]
+			w = 5*self.deltas[delta]**(0.5)
+			a = self.deltas[delta]
+			nx.draw_networkx_edges(G,pos,edgelist=[(first,second)],width=w,alpha=a,edge_color='b')
+
 		nx.draw_networkx_labels(G,pos,font_size=10,font_family='open sans')
 		
 		plt.axis('off')

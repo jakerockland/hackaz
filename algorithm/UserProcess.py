@@ -3,19 +3,26 @@
 import data     # Get our horrendous dictionary (called "deltas") of hashtag pairs with corresponding deltas
 		# This also has the "probabilities" dictionary and a "user_percent" dictionary.
 from tweets_percentage import * 
+import 
 
 class UserProcess(object):
 
-	def __init__(self,users_tweets,username,nothing=False):
+	def __init__(self,user_tweets,username,nothing=False):
 		# usersTweets is a dictionary.
 		# set up empty list and dictionary for later output.
 		self.to_follow=[] 
 		self.related_tags={}
-
-		# calculate all the things, so that we can then get results when necessary.		
-		if nothing is False:
-			self.calculate(users_tweets,username)
 		
+		self.calcTop(user_tweets)
+		# calculate all the things, so that we can then get results when necessary.		
+		#if nothing is False:
+		#	self.calculate(users_tweets,username)
+
+	def calcTop(self,user_tweets):
+		all_list = calc_weights(self,user_tweets).values()
+		all_list.sort(key=lambda tup: tup[1])
+		return all_list[0:10]
+
 	def calculate(self,users_tweets,username):
 		# Calculates the users similarities with others
 		# Is only internal, returns nothing
