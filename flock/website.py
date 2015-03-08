@@ -43,7 +43,7 @@ def show(page):
     try:
         return render_template('%s.html' % page)
     except TemplateNotFound:
-        abort(404)
+        return render_template('notfound.html')
 
 
 """
