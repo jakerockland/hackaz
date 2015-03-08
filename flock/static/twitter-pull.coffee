@@ -12,6 +12,7 @@ $ ->
         })
 
         request.done (data, textStatus, jqXHR) ->
+            console.log "help"
             # names = data.names
             window.location = 'http://weflock.co/suggest'
 
