@@ -2,6 +2,7 @@ $ ->
     $("#lets-fly").on "click", ->
         onError = (jqXHR, textStatus, errorThrown) ->
             if jqXHR.status == 403
+                console.log "vip is a shit"
                 location.href = "/login/twitter"
             else
                 alert "Your authentication with Twitter failed... Whoops."
