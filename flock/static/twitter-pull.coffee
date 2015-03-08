@@ -12,7 +12,7 @@ $ ->
         })
 
         request.done (data, textStatus, jqXHR) ->
-            names = data.names
+            # names = data.names
             window.location = 'http://weflock.co/suggest'
 
         request.fail onError
