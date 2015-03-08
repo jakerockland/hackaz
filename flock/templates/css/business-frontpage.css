@@ -1,0 +1,150 @@
+/*!
+ * Start Bootstrap - Business Frontpage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    font-family: 'Oxygen';
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header {
+    height: 400px;
+    background: url('../img/hero.png') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+
+.tagline {
+    color: #fff;
+    padding-top:100px;
+    font-size: 80px;
+}
+
+.tagsub {
+    color: #fff;
+    margin-top:0px;
+    font-size: 30px;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.navbar-nav {
+    float:right;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+     transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -o-transition:All 1s ease;
+}
+
+
+.navbar {
+    background-color:#353535;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.btn {
+    margin-top:20px;
+}
+
+.btn-default, .btn-default:active, .btn-default:focus {
+    background-color:#55acee;
+    border-color:#55acee;
+    color:#fff;
+    transition:All 1s ease;
+    -moz-transition:All 1s ease;
+    -webkit-transition:All 1s ease;
+    -o-transition:All 1s ease;
+    font-size:20px;
+    padding:20px;
+}
+
+.btn-default:hover{
+    background-color:#e2f0fa;
+    border-color:#e2f0fa;
+    color:#8ccfff;
+}
+
+.fa {
+    color: #8ccfff;
+}
+
+h4 {
+    font-family: 'Roboto Slab';
+    text-transform: lowercase;
+    color: #8ccfff;
+    font-size: 26px;
+    font-weight:300;
+}
+
+h3 {
+    margin: 0;
+    color:#bbb;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: 'Roboto Slab';
+    text-transform: lowercase;
+    font-weight:200;
+    color: #55acee;
+    font-size: 50px;
+    margin:0;
+}
+
+footer {
+    background-color: #55acee;
+    color:#8ccfff;
+    width: 100%;
+    font-weight: 600;
+    margin-bottom:0px;
+    padding: 20px;
+    text-transform:uppercase;
+}
+
+.button.solid-color {
+  background-color: #8ccfff;
+  padding: 15px 40px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  margin-right: 15px;
+  border-width: 0px;
+}
+
+button, input, select, textarea {
+  font-size: 14px;
+  padding: 10px;
+  margin: 10px;
+  color: #fff;
+  background-color: #8ccfff;
+  border:none;
+}
+
+input[placeholder], select[placeholder], textarea[placeholder] {
+  color: #fff !important;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+}
