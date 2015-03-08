@@ -11,7 +11,7 @@ class UserProcess(object):
 		self.related_tags={}
 
 	def calcTop(self,user_tweets):
-		all_list = calc_weights(self,user_tweets).values()
+		all_list = self.calc_weights(self,user_tweets).values()
 		all_list.sort(key=lambda tup: tup[1])
 		return all_list[0:10]
 
@@ -20,7 +20,7 @@ class UserProcess(object):
 		# Is only internal, returns nothing
 
 		# Get user's weights
-		username_weights = calc_weights(users_tweets[username])
+		username_weights = self.calc_weights(users_tweets[username])
 
 		# Pull out username's tweets. Del from dictionary to speed up for loop.
 		username_tweets = users_tweets[username]
@@ -30,7 +30,7 @@ class UserProcess(object):
 
 		# Loop through all users and calculate "distance" with username.
 		for match in users_tweets:
-			match_weights=calc_weights(users_tweets[match])
+			match_weights=self.calc_weights(users_tweets[match])
 			distance = weight_diff(username_weights,match_weights,match)
 
 			# Check if match in top 10 matches; add if it is.
