@@ -41,35 +41,13 @@
             <div class="col-lg-12">
                 <h2 class="page-header">suggestions</h2>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-                <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/559426770123100160/0QPcaZRU.jpeg" alt="">
-                <a target="_blank" href="https://twitter.com/aimee_e27"><h4>Aimee Eckert</h4></a>
-                <p>#scicomm, #openaccess</p>
+            {% for user in users %}
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="{{ user.profs }}" alt="">
+                <a target="_blank" href="#"><h4>{{ user.name}}</h4></a>
+                <p>{{ user.tags }}</p>
             </div>
-           <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-               <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/428743904729374720/UHfQGF1o.png" alt="">
-               <a target="_blank" href="https://twitter.com/Impactstory"><h4>Impactstory</h4></a>
-               <p>#altmetrics, #research, #scicomm</p>
-           </div>
-           <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-               <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/572895841543659520/Cz2KeE0R.jpeg" alt="">
-               <a target="_blank" href="https://twitter.com/bunsen_burns"><h4>Chemistry in Context</h4></a>
-               <p>#chemistry, #science</p>
-           </div>
-           <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-               <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/573495898212147200/60Rk2UdJ.png" alt="">
-               <a target="_blank" href="https://twitter.com/sciencefocus"><h4>BBC Focus Magazine</h4></a>
-               <p>#science</p>
-           </div>
-           <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-               <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/378800000458165751/2ee27919d45ccb336701a4671348f5a4.png" alt="">
-               <a target="_blank" href="https://twitter.com/beatricebiology"><h4>Beatrice Biology</h4></a>
-               <p>#sciart</p>
-           </div>
-           <div class="col-lg-4 col-sm-6 text-center" style="margin-bottom:60px;">
-              <img class="img-circle img-responsive img-center" width=200px height=200px src="https://pbs.twimg.com/profile_images/460150609434247169/hliQTnZf.png" alt="">
-              <a target="_blank" href="https://twitter.com/publiscize"><h4>Publiscize</h4></a>
-              <p>#scinopsis, #scicomm</p>
+            {% endfor %}
           </div>
         </div>
 
