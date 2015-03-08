@@ -15,7 +15,7 @@ class UserProcess(object):
 
     def calcTop(self,user_tweets):
         all_list = self.calc_weights(user_tweets).values()
-        all_list.sort(key=lambda tup: tup[1])
+        all_list.sort()
         return all_list[0:10]
 
     def calculate(self,users_tweets,username):
@@ -62,9 +62,14 @@ class UserProcess(object):
             delta_percent = percentages[node]
             for connected_node in percentages:
                 if node < connected_node:
-                    delta_percent += (percentages[connected_node]-probabilities[connected_node+"|"+node])*deltas[node+"|"+connected_node] # TODO make this not loop twice as many times as necessary.
-            delta_percentages[node] = delta_percent/float(user_percent[node])
-
+                	try:
+				delta_percent += (percentages[connected_node]-probabilities[connected_node+"|"+node])*deltas[node+"|"+connected_node] # TODO make this not loop twice as many times as necessary.
+            		except:
+				pass
+		try:
+			delta_percentages[node] = delta_percent/float(user_percent[node])
+		except:
+			delta_percentages[node] = 0
         return delta_percentages
 
 
