@@ -73,7 +73,7 @@ def get_twitter_user_data():
     process.calculate(matches, username)
     to_follow = process.getToFollow()
     users = []
-    for user in to_follow
+    for user in to_follow:
         users.append(user[0])
     # related_tags = process.getRelatedTags
     return jsonify(users=users)

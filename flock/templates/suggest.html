@@ -43,8 +43,8 @@
             </div>
             {% for user in users %}
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="{{ user.profs }}" alt="">
-                <a target="_blank" href="#"><h4>{{user.name}}</h4></a>
+                <!-- <img class="img-circle img-responsive img-center" src="{{ user.profs }}" alt=""> -->
+                <a target="_blank" href="https://twitter.com/{{ user }}"><h4>@{{ user }}</h4></a>
                 <!--<p>{{ user.tags }}</p>-->
             </div>
             {% endfor %}
