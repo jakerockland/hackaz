@@ -2,3 +2,5 @@
 venv/
 env/
 *secrets*
+.webassets-cache
+flock/static/gen/

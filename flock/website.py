@@ -45,6 +45,14 @@ def show(page):
     except TemplateNotFound:
         abort(404)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('500.html'), 500
+
 
 """
 If a user has a Twitter OAuth access token and token secret in their session,
@@ -52,8 +60,17 @@ this URL will return a JSON-encoded list of some bullshit that Kuba said...
 """
 @app.route('/twitter')
 def get_twitter_user_data():
-    from flock.teacup import twitter
     access_token, token_secret = oauth.get_twitter_token()
     if access_token is None and token_secret is None:
         abort(403)
-    return jsonify(names=[],tags=[],profs=[])
+    from flock.teacup import twitter
+    from flock.teacup import algorithm
+    username, tweets = twitter.get_tweets(access_token, token_secret)
+    process = algorithm.UserProcess(username, tweets)
+    taglist = process.calcTop(tweets)
+    matches = twitter.get_matches(access_token, token_secret, taglist)
+    matches[username] = tweets
+    process.calculate(matches, username)
+    to_follow = process.getToFollow
+    # related_tags = process.getRelatedTags
+    return jsonify(names=to_follow)
