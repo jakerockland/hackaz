@@ -57,12 +57,13 @@ def get_twitter_user_data():
         abort(403)
     from flock.teacup import twitter
     from flock.teacup import algorithm
-    username, tweets = twitter.get_tweets(access_token, token_secret)
-    process = algorithm.UserProcess(username, tweets)
-    taglist = process.calcTop(tweets)
-    matches = twitter.get_matches(access_token, token_secret, taglist)
-    matches[username] = tweets
-    process.calculate(matches, username)
-    to_follow = process.getToFollow
-    # related_tags = process.getRelatedTags
-    return jsonify(names=to_follow)
+    return jsonify(name='follow_me')
+    # username, tweets = twitter.get_tweets(access_token, token_secret)
+    # process = algorithm.UserProcess(username, tweets)
+    # taglist = process.calcTop(tweets)
+    # matches = twitter.get_matches(access_token, token_secret, taglist)
+    # matches[username] = tweets
+    # process.calculate(matches, username)
+    # to_follow = process.getToFollow
+    # # related_tags = process.getRelatedTags
+    # return jsonify(names=to_follow)
