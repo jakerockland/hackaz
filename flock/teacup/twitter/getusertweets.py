@@ -7,12 +7,14 @@ key_secret = twitter_auth["consumer_secret"]
 
 def getusertweets(access_token, access_token_secret):
     auth = tweepy.OAuthHandler(key, key_secret)
-	auth.set_access_token(access_token, access_token_secret)
-	api = tweepy.API(auth)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth)
 
-    tweepy.Cursor(api.me)
+    username = api.me().screen_name
 
-    API.user_timeline([id/user_id/screen_name][, since_id][, max_id][, count][, page])
-    API.search_users(q[, per_page][, page])
+    tweets = []
 
-    return
+    for tweet in tweepy.Cursor(api.user_timeline, count=100).items():
+        tweets.append(tweet)
+
+    return username, tweets
