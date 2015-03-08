@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find your flock: better suggestions of who to follow on Twitter">
+    <meta name="author" content="Viputheshwar Sitaraman">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <title>Flock | Suggestions</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel=stylesheet type=text/css href="../static/bootstrap/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel=stylesheet type=text/css href="../static/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,800,900,100,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">suggestions</h2>
+            </div>
+            {% for {{ user }} in {{ users }} %}
+            <div class="col-lg-4 col-sm-6 text-center">
+                <!-- <img class="img-circle img-responsive img-center" src="{{ user.profs }}" alt=""> -->
+                <a target="_blank" href="https://twitter.com/{{ user }}"><h4>@{{ user }}</h4></a>
+                <!--<p>{{ user.tags }}</p>-->
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <hr>
+    </div>
+    <!-- /.container -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row text-center" style="margin-bottom:60px;">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Flock 2015</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
