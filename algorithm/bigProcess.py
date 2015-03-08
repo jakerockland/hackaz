@@ -1,18 +1,39 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from tweets_percentage import *
+import networkx as nx
+import matplotlib.pyplot as plt
 
 class BigProcess(object):
 	
-	def __init__(self, tweets):
+	def __init__(self, tweets_info):
 		# Initializes the process. Searches through a bunch of tweets and builds
 		# a model, consisting of "probabilities", "deltas", and "user_percent"
+		tweets = self.strip_basic_tweets(tweets_info)
 		self.percentages = tweets_percentage(tweets)
 		self.probabilities = self.calc_probabilities(tweets)
 		self.deltas = self.calc_deltas()
 		self.user_percent = self.percentages
 		self.write_file()
 
+	def strip_basic_tweets(self,tweets_info):
+		return tweets_info # TODO make this take in twitter status objects and spit out just the text of the tweets.
+
+	def graph(self):
+		G = nx.Graph()
+		for delta in self.deltas:
+			first = delta[0]
+			second = delta[1]
+			G.add_edge(first,second,weight=self.deltas[delta])
+
+		pos=nx.spring_layout(G)
+		nx.draw_networkx_nodes(G,pos,node_size=100)
+		nx.draw_networkx_edges(G,pos,width=2)
+		nx.draw_networkx_labels(G,pos,font_size=10,font_family='open sans')
+		
+		plt.axis('off')
+		plt.savefig("weighted_graph.png")
+		plt.show()
 
 	def calc_deltas(self):
 		# Takes probabilities, and does a sum across all neighbors of each 
