@@ -3,8 +3,8 @@ from tweepy import OAuthHandler
 import flock.config
 
 twitter_auth = flock.config.oauth.get('twitter', {})
-key = 'CeT9R1meMaKrUUly9QVBzfn22'  # twitter_auth["consumer_key"]
-key_secret = 'K0Uz3f03EmRpC6eLwTrn6XYwVm0k3JX26XE6yFLmgyKbgt7oAd' # twitter_auth["consumer_secret"]
+key = twitter_auth["consumer_key"]
+key_secret = twitter_auth["consumer_secret"]
 
 def getpotentialmatches(access_token, access_token_secret, taglist):
     auth = tweepy.OAuthHandler(key, key_secret)
