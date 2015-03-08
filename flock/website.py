@@ -57,7 +57,7 @@ def get_twitter_user_data():
         abort(403)
     from flock.teacup import twitter
     from flock.teacup import algorithm
-    return jsonify(name='follow_me')
+    return jsonify(names='follow_me')
     # username, tweets = twitter.get_tweets(access_token, token_secret)
     # process = algorithm.UserProcess(username, tweets)
     # taglist = process.calcTop(tweets)

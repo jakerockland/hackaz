@@ -13,9 +13,8 @@ $ ->
 
         request.done (data, textStatus, jqXHR) ->
             names = data.names
-            tags = data.tags
-            profs = data.profs
             window.location = 'http://weflock.co/suggest'
+
         request.fail onError
 
         return request
