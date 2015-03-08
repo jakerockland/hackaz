@@ -63,5 +63,5 @@ def oauth_authorized(resp):
     )
     session['twitter_user'] = resp['screen_name']
 
-    flash('You were signed in as {0}'.format(resp['screen_name']))
+    flash('You were signed in as %s' % resp['screen_name'])
     return redirect(next_url)
