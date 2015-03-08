@@ -43,7 +43,15 @@ def show(page):
     try:
         return render_template('%s.html' % page)
     except TemplateNotFound:
-        return render_template('notfound.html')
+        abort(404)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('notfound.html'), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('heavylifting.html'), 500
 
 
 """
