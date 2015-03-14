@@ -1,9 +1,4 @@
-from data import deltas
-from data import probabilities
-from data import user_percent
-    # Get our horrendous dictionary (called "deltas") of hashtag pairs with corresponding deltas
-    # This also has the "probabilities" dictionary and a "user_percent" dictionary.
-from tweetspercentage import tweets_percentage
+import tweetspercentage
 
 class UserProcess(object):
 
@@ -54,7 +49,7 @@ class UserProcess(object):
         # the delta-adjusted overcounted weights
 
         # Get adjusted user percentages as a dictionary with hashtags as keys
-        percentages = tweets_percentage(user_tweets)
+        percentages = tweetspercentage.tweets_percentage(user_tweets)
         delta_percentages = {}
 
         # adjust all nodes based on deltas and probabilities from BigProcess.

@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import re
 
+#TODO do this differently; this current method is horrible.
 def tweets_percentage(tweets,tag_slice=""):
     # Takes in a list of tweets (each tweet is a separate string).
     # Outputs a dictionary with keys of hashtags and values of percentages.
